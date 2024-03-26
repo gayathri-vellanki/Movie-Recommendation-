@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plts
 
 st.title("Movie Recommendation System")
 st.markdown('Using Collabrative Filtering')
@@ -76,7 +76,7 @@ user_similarity_cosine = cosine_similarity(matrix_norm.fillna(0))
 n = 10
 user_similarity_threshold = 0.3
 st.write("picked userId:")
-picked_userid=
+picked_userid=1
 st.write(picked_userid)
 
 similar_users = user_similarity[user_similarity[picked_userid]>user_similarity_threshold][picked_userid].sort_values(ascending=False)[:n]
