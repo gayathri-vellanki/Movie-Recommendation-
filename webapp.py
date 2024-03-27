@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plts
+import matplotlib.pyplot as plt
 
 st.title("Movie Recommendation System")
 st.markdown('Using Collabrative Filtering')
