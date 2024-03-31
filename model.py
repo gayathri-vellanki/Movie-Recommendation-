@@ -57,3 +57,5 @@ ranked_item_score.head(m)
 import pickle
 pickle.dump(ranked_item_score.head(m), open('Movies_List.pkl', 'wb'))
 print(pickle.load(open('Movies_List.pkl', 'rb')))
+with open('Movies_List_data.pkl', 'wb') as f:
+    pickle.dump((matrix,matrix_norm, user_similarity,user_similarity_cosine,similar_users , similar_user_movies, item_score, ranked_item_score, ranked_item_score.head(m)), f)    
