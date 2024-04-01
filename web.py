@@ -9,7 +9,7 @@ with open('deep_model_data.pkl', 'rb') as f:
 
 
 
-def predict_similar_movies(userId, title, movie_count):
+def predict_similar_movies(userId,  movie_count):
     item_score = {}
     for i in similar_user_movies.columns:
         movie_rating = similar_user_movies[i]
@@ -29,7 +29,7 @@ def predict_similar_movies(userId, title, movie_count):
 
 
     
-    st.write(f"Here are {movie_count} movie recommendations for user {userId} based on the movie '{title}':")
+    st.write(f"Here are {movie_count} movie recommendations for user {userId} :")
     st.table(ranked_item_score.head(movie_count))
 
 # Create the Streamlit app
@@ -37,9 +37,8 @@ st.title(' Movie Recommender')
 
 # Get user input
 userId = st.number_input('Enter your user ID', min_value=1, max_value=610, value=1)
-title = st.text_input('Enter a movie title')
 movie_count = st.number_input('Enter the number of recommendations you want', min_value=1, max_value=25, value=10)
 
 # Make recommendations based on user input
 if st.button('Get Recommendations'):
-    predict_similar_movies(userId, title, movie_count)
+    predict_similar_movies(userId,  movie_count)
