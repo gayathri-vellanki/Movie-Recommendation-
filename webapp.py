@@ -1,15 +1,15 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+
 
 st.title("Movie Recommendation System")
 st.markdown('Using Collabrative Filtering')
 import scipy.stats
 import seaborn as sns
 from sklearn.metrics.pairwise import cosine_similarity
-ratings=pd.read_csv(r'C:\Users\Dell\Downloads\ml-latest-small\ratings.csv')
-movies = pd.read_csv(r'C:\Users\Dell\Downloads\ml-latest-small\movies.csv')
+ratings=pd.read_csv(r'ratings.csv')
+movies = pd.read_csv(r'movies.csv')
 df = pd.merge(ratings, movies, on='movieId', how='inner')
 agg_ratings = df.groupby('title').agg(mean_rating = ('rating', 'mean'),number_of_ratings = ('rating', 'count')).reset_index()
 agg_ratings_GT100 = agg_ratings[agg_ratings['number_of_ratings']>100]
