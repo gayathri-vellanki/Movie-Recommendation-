@@ -41,4 +41,4 @@ movie_count = st.number_input('Enter the number of recommendations you want', mi
 
 # Make recommendations based on user input
 if st.button('Get Recommendations'):
-    predict_similar_movies(userId,  movie_count)
+    predict_similar_movies(userId,movie_count)
